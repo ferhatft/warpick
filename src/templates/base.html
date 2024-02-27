@@ -1,0 +1,113 @@
+<!doctype html>
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<html class="no-js" lang="en">
+    <head>
+        <title>Warpick</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="ferhattugrul">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="description" content="Warpick">
+        <!-- favicon icon -->
+        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon-57x57.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}">
+        <!-- style sheets and font icons  -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/font-icons.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/theme-vendors.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+    </head>
+    {% url 'anasayfa' as home_url %}
+    
+    {% url 'iletisim:iletisim' as contact_url %}
+    
+    <body data-mobile-nav-style="classic">
+        <!-- start box layout section -->
+        <div class="box-layout">
+            <!-- start header -->
+            <header>
+                <nav class="navbar navbar-expand-lg top-space navbar-light header-light fixed-top header-reverse-scroll menu-logo-center">
+                    <div class="container-lg nav-header-container">
+                        <div class="col-6 px-lg-0 menu-logo">
+                            <a class="navbar-brand" href="{{home_url}}">  
+                                <img src="{% static 'images/warpick.png' %}" data-at2x="{% static 'images/warpick.png' %}" class="default-logo" alt="">
+                                <img src="{% static 'images/warpick.png' %}" data-at2x="{% static 'images/warpick.png' %}" class="alt-logo" alt="">
+                                <img src="{% static 'images/warpick.png' %}" data-at2x="{% static 'images/warpick.png' %}" class="mobile-logo" alt="">
+                            </a>
+                        </div>
+                        <div class="col-auto col-lg-12 px-lg-0 menu-order">
+                            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-line"></span>
+                                <span class="navbar-toggler-line"></span>
+                                <span class="navbar-toggler-line"></span>
+                                <span class="navbar-toggler-line"></span>
+                            </button>
+                            <div class=" collapse navbar-collapse justify-content-between" id="navbarNav">
+                                <ul class="navbar-nav alt-font navbar-left justify-content-end">
+                                    <li class="nav-item ">
+                                        <a href="{% url 'bizkimiz' %}" class="nav-link">Biz Kimiz</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{% url 'neyapıyoruz' %}" class="nav-link">Ne Yapıyoruz</a>
+                                    </li>
+                                </ul>
+                                <ul class="navbar-nav alt-font navbar-right justify-content-start">
+                                   
+                                    <li class="nav-item ">
+                                        <a href="{% url 'portfolyo' %}" class="nav-link">Portfolyo</a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="{{contact_url}}" class="nav-link">İletişim</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <!-- end header -->
+            
+            {% block slide %}
+            
+            {% endblock slide %}
+                
+        </div>
+        {% block body %}
+
+        {% endblock body %}
+        <!-- start footer -->
+        <footer class="bg-dark-slate-blue padding-10-half-rem-tb md-padding-8-half-rem-tb">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8 text-center">
+                        <div class="social-icon-style-10 margin-3-half-rem-bottom">
+                            <ul class="large-icon">
+                                <li><a class="facebook text-white" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i><span></span></a></li>
+                                <li><a class="dribbble text-white" href="http://www.dribbble.com" target="_blank"><i class="fab fa-dribbble"></i><span></span></a></li>
+                                <li><a class="linkedin text-white" href="http://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i><span></span></a></li>
+                                <li><a class="instagram text-white" href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i><span></span></a></li>
+                                <li><a class="behance text-white" href="http://www.behance.com/" target="_blank"><i class="fab fa-behance"></i><span></span></a></li>
+                            </ul>
+                        </div>
+                        <h4 class="alt-font text-slate-blue-light font-weight-300 margin-10px-bottom d-block letter-spacing-minus-2px">New creative ideas send us an email</h4>
+                        <h4 class="alt-font font-weight-600 margin-7-rem-bottom"><a href="mailto:info@domain.com" class="text-gradient-sky-blue-dark-pink">info@domain.com</a></h4>
+                        <p class="alt-font text-small text-slate-blue-light text-uppercase m-0">&copy; 2021 Warpick is Proudly Powered by <a href="ferhattugrul.com" target="_blank" class="text-decoration-line-bottom text-white">ferhattugrul</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
+    
+        <!-- start scroll to top -->
+        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+        <!-- end scroll to top -->
+        <!-- javascript -->
+        <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/theme-vendors.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
